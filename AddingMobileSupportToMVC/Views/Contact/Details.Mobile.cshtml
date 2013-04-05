@@ -1,0 +1,33 @@
+﻿@model AddingMobileSupportToMVC.Models.Contact
+@{
+    Layout = "~/Views/Shared/_Layout.Mobile.cshtml";
+    ViewBag.Title = "Details";
+}
+
+@section Header{
+    <div data-role="button" data-icon="arrow-l" data-rel="back" class="ui-btn-left">
+        @Html.ActionLink("Back", "Index")
+    </div>
+}
+<ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">
+        <h2>@Model.Name</h2>
+    </li>
+    <li>
+        <div style="padding: 3px">Street: @Model.Street</div>
+        <div style="padding: 3px">Address: @Model.Address</div>
+        <div style="padding: 3px">State: @Model.State</div>
+        <div style="padding: 3px">Country: @Model.Country</div>
+        <div style="padding: 3px">Postal Code: @Model.PostalCode</div>
+    </li>
+</ul>
+@using (Html.BeginForm("Edit", "Contact", new { id = Model.Id }, System.Web.Mvc.FormMethod.Get))
+{
+    <button id="edit" name="edit" data-role="button" data-icon="grid">Edit</button>
+}
+@using (Html.BeginForm("Delete", "Contact", new { id = Model.Id }, System.Web.Mvc.FormMethod.Get))
+{
+    <button id="delete" name="delete" data-role="button" data-icon="delete">Delete</button>
+}
+
+

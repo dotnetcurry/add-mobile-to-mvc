@@ -1,0 +1,60 @@
+﻿@model AddingMobileSupportToMVC.Models.Contact
+@{
+    Layout = "~/Views/Shared/_Layout.Mobile.cshtml";
+    ViewBag.Title = "Edit";
+}
+
+@section Header{
+    <div data-role="button" data-icon="arrow-l" data-rel="back" class="ui-btn-left">
+        @Html.ActionLink("Cancel", "Index")
+    </div>
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <ul data-role="listview" data-inset="false">
+        <li data-role="list-divider">@Html.LabelFor(model => model.Name)</li>
+        <li>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </li>
+        <li data-role="list-divider">@Html.LabelFor(model => model.Address)</li>
+        <li>
+            @Html.LabelFor(model => model.Street)
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Street)
+                @Html.ValidationMessageFor(model => model.Street)
+            </div>
+            @Html.LabelFor(model => model.Address)
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+            @Html.LabelFor(model => model.State)
+            <div class="editor-field">
+                @Html.EditorFor(model => model.State)
+                @Html.ValidationMessageFor(model => model.State)
+            </div>
+            @Html.LabelFor(model => model.Country)
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Country)
+                @Html.ValidationMessageFor(model => model.Country)
+            </div>
+            @Html.LabelFor(model => model.PostalCode)
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PostalCode)
+                @Html.ValidationMessageFor(model => model.PostalCode)
+            </div>
+            @Html.LabelFor(model => model.DateOfBirth)
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DateOfBirth)
+                @Html.ValidationMessageFor(model => model.DateOfBirth)
+            </div>
+        </li>
+    </ul>
+    <input type="submit" value="Save" id="edit" name="edit" data-role="button" data-icon="grid" />
+}
+

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AddingMobileSupportToMVC.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th class="header-padding">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th class="header-padding">
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th class="header-padding">
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th class="header-padding">
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th class="header-padding">
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </th>
+        <th class="header-padding">
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th class="header-padding">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

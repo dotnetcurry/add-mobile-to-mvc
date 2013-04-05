@@ -1,0 +1,73 @@
+﻿@model AddingMobileSupportToMVC.Models.Contact
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Contact</legend>
+    <div class="row-wrapper">
+        <div class="display-label float-left">
+            @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="display-field float-left">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+    </div>
+    <div class="row-wrapper">
+        <div class="display-label float-left">
+            @Html.DisplayNameFor(model => model.Street)
+        </div>
+        <div class="display-field float-left">
+            @Html.DisplayFor(model => model.Street)
+        </div>
+    </div>
+    <div class="row-wrapper">
+        <div class="display-label float-left">
+            @Html.DisplayNameFor(model => model.Address)
+        </div>
+        <div class="display-field float-left">
+            @Html.DisplayFor(model => model.Address)
+        </div>
+    </div>
+    <div class="row-wrapper">
+        <div class="display-label float-left">
+            @Html.DisplayNameFor(model => model.State)
+        </div>
+        <div class="display-field float-left">
+            @Html.DisplayFor(model => model.State)
+        </div>
+    </div>
+
+    <div class="row-wrapper">
+        <div class="display-label float-left">
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </div>
+        <div class="display-field float-left">
+            @Html.DisplayFor(model => model.PostalCode)
+        </div>
+    </div>
+    <div class="row-wrapper">
+        <div class="display-label float-left">
+            @Html.DisplayNameFor(model => model.Country)
+        </div>
+        <div class="display-field float-left">
+            @Html.DisplayFor(model => model.Country)
+        </div>
+    </div>
+
+    <div class="row-wrapper">
+        <div class="display-label float-left">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </div>
+        <div class="display-field float-left">
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </div>
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
